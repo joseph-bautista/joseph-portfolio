@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Joseph Bautista | Software &amp; Cloud Engineer</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER NAV
+  ============================================================ -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <a class="logo" href="#">
+        <span class="logo-bracket">[</span>joseph<span class="logo-dot">.</span>dev<span class="logo-bracket">]</span>
+      </a>
+
+      <nav class="main-nav">
+        <a href="#summary"    class="nav-link" data-section="summary">_summary</a>
+        <a href="#skills"     class="nav-link" data-section="skills">_skills</a>
+        <a href="#projects"   class="nav-link" data-section="projects">_projects</a>
+        <a href="#experience" class="nav-link" data-section="experience">_experience</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="resume.pdf" download class="btn-resume">
+          <i class="fas fa-file-arrow-down"></i><span>Resume</span>
+        </a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+          <i class="fas fa-sun  icon-sun"></i>
+          <i class="fas fa-moon icon-moon"></i>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- ============================================================
+       HERO — SUMMARY
+  ============================================================ -->
+  <section class="hero" id="summary">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="grid-lines"></div>
+      <div class="glow-orb orb-1"></div>
+      <div class="glow-orb orb-2"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="status-dot"></span>
+        Open to new opportunities
+      </div>
+
+      <h1 class="hero-name">Joseph Bautista</h1>
+
+      <p class="hero-role">
+        <span class="role-bracket">&lt;</span>
+        Software &amp; Cloud Engineer
+        <span class="role-bracket"> /&gt;</span>
+      </p>
+
+      <p class="hero-bio">
+        Backend-focused Software Engineer with <strong>7+ years</strong> of experience building
+        robust web applications and cloud infrastructure. Specializing in Laravel, PHP, and
+        AWS — from architecting scalable backends to automating CI/CD pipelines and cutting
+        operational costs. I write clean code, ship reliable software, and care deeply about
+        system design and developer experience.
+      </p>
+
+      <div class="hero-contact">
+        <a href="mailto:josephreuben.bautista@gmail.com" class="contact-chip">
+          <i class="fas fa-envelope"></i> josephreuben.bautista@gmail.com
+        </a>
+        <a href="https://github.com/joseph-bautista" target="_blank" class="contact-chip">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+        <a href="https://linkedin.com/in/joseph-bautista" target="_blank" class="contact-chip">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="https://www.josephbautista.com" target="_blank" class="contact-chip">
+          <i class="fas fa-globe"></i> josephbautista.com
+        </a>
+        <a href="tel:+639171805368" class="contact-chip">
+          <i class="fas fa-phone"></i> +63 917 180 5368
+        </a>
+      </div>
+    </div>
+
+    <!-- Terminal widget -->
+    <div class="terminal-widget" aria-hidden="true">
+      <div class="terminal-topbar">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+        <span class="terminal-label">joseph@cloud:~$</span>
+      </div>
+      <div class="terminal-body">
+        <div class="t-line"><span class="t-prompt">$</span> whoami</div>
+        <div class="t-out t-name">Joseph Reuben L. Bautista</div>
+
+        <div class="t-line"><span class="t-prompt">$</span> uptime --years</div>
+        <div class="t-out"><span class="t-green">7+</span> years of production-grade engineering</div>
+
+        <div class="t-line"><span class="t-prompt">$</span> skills --top</div>
+        <div class="t-out t-amber">PHP · Laravel · AWS · MySQL · PostgreSQL · JS</div>
+
+        <div class="t-line"><span class="t-prompt">$</span> cat achievements.log</div>
+        <div class="t-out"><span class="t-green">↓37%</span> AWS cost · <span class="t-green">↑74%</span> deploy speed</div>
+
+        <div class="t-line"><span class="t-prompt">$</span> location</div>
+        <div class="t-out"><span class="t-green">📍</span> Metro Manila, Philippines</div>
+
+        <div class="t-line"><span class="t-prompt t-blink">$</span> <span class="cursor-block">_</span></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SKILLS
+  ============================================================ -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-num">02</span>
+        <h2 class="section-title">Skills</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="skills-grid">
+
+        <div class="skill-card">
+          <div class="skill-card-icon"><i class="fas fa-cloud"></i></div>
+          <h3 class="skill-card-title">Cloud &amp; Infrastructure</h3>
+          <div class="tag-group">
+            <span class="tag">AWS EC2</span>
+            <span class="tag">AWS S3</span>
+            <!-- <span class="tag">AWS Lambda</span> -->
+            <span class="tag">AWS RDS</span>
+            <!-- <span class="tag">CloudFormation</span> -->
+            <span class="tag">IAM</span>
+            <span class="tag">Route 53</span>
+            <span class="tag">CloudFront</span>
+            <span class="tag">Lightsail</span>
+            <!-- <span class="tag">Elastic Beanstalk</span> -->
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-icon"><i class="fas fa-code"></i></div>
+          <h3 class="skill-card-title">Backend Engineering</h3>
+          <div class="tag-group">
+            <span class="tag">PHP</span>
+            <span class="tag">Laravel</span>
+            <span class="tag">JavaScript</span>
+            <!-- <span class="tag">Python</span> -->
+            <span class="tag">ExpressJS</span>
+            <!-- <span class="tag">Django</span> -->
+            <!-- <span class="tag">NodeJS</span> -->
+            <span class="tag">REST APIs</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-icon"><i class="fas fa-database"></i></div>
+          <h3 class="skill-card-title">Databases</h3>
+          <div class="tag-group">
+            <span class="tag">MySQL</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Schema Design</span>
+            <span class="tag">Query Optimization</span>
+            <span class="tag">Migrations</span>
+            <!-- <span class="tag">Indexing</span> -->
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-icon"><i class="fas fa-wrench"></i></div>
+          <h3 class="skill-card-title">Tools &amp; Practices</h3>
+          <div class="tag-group">
+            <span class="tag">Git &amp; GitHub</span>
+            <!-- <span class="tag">Docker</span> -->
+            <span class="tag">CI/CD</span>
+            <span class="tag">GitHub Actions</span>
+            <span class="tag">Postman</span>
+            <span class="tag">jQuery</span>
+            <span class="tag">Linux / Bash</span>
+            <!-- <span class="tag">Agile / Scrum</span> -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       PROJECTS
+       ✏️ UPDATE: Replace these with your real personal/side projects.
+       The experience section already covers work projects, so use
+       this for open-source, freelance, or personal builds.
+  ============================================================ -->
+  <section class="section section-alt" id="projects">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-num">03</span>
+        <h2 class="section-title">Projects</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div class="project-card-header">
+            <span class="project-type">Platform · API</span>
+            <div class="project-links">
+              <!-- <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a> -->
+              <a href="https://valtorsolutions.com/products" target="_blank" title="Live Demo"><i class="fas fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+          <h3 class="project-title">AI-Powered Procurement Platform</h3>
+          <p class="project-desc">
+            Built the backend and AWS infrastructure for both the customer-facing platform
+            and admin CRM, delivering real-time services plus a full admin CMS
+            for backend management.
+          </p>
+          <div class="project-stack">
+            <span class="stack-tag">Laravel</span>
+            <span class="stack-tag">PostgreSQL</span>
+            <span class="stack-tag">REST API</span>
+            <!-- <span class="stack-tag">GitHub Actions</span> -->
+            <span class="stack-tag">AWS</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-card-header">
+            <span class="project-type">Infrastructure · DevOps</span>
+            <div class="project-links">
+              <!-- <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a> -->
+              <a href="https://www.matchmecarfinance.co.uk/" target="_blank" title="Live Demo"><i class="fas fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+          <h3 class="project-title">AWS CI/CD Pipeline</h3>
+          <p class="project-desc">
+            Designed and automated a full CI/CD pipeline using GitHub Actions for a
+            multi-server AWS environment. Accelerated deployments by <strong>74%</strong> and
+            eliminated manual release steps, improving consistency across staging and production.
+          </p>
+          <div class="project-stack">
+            <span class="stack-tag">GitHub Actions</span>
+            <span class="stack-tag">AWS</span>
+            <!-- <span class="stack-tag">Docker</span> -->
+            <span class="stack-tag">Bash</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-card-header">
+            <span class="project-type">Backend · AWS</span>
+            <div class="project-links">
+              <!-- ✏️ UPDATE: Replace # with your repo link -->
+              <!-- <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a> -->
+              <!-- ✏️ UPDATE: Replace # with live link or remove anchor -->
+              <a href="https://qr.xctuality.com/" target="_blank" title="Live Demo"><i class="fas fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+          <!-- ✏️ UPDATE: Project name -->
+          <h3 class="project-title">QR Generator Platform</h3>
+          <!-- ✏️ UPDATE: Description -->
+          <p class="project-desc">
+            Backend system for a QR code generation app that helped the business gain
+            12% more traction across its product ecosystem. Built REST APIs in Laravel
+            to handle dynamic QR generation, analytics, and user management.
+          </p>
+          <div class="project-stack">
+            <span class="stack-tag">Laravel</span>
+            <!-- <span class="stack-tag">PHP</span> -->
+            <span class="stack-tag">MySQL</span>
+            <span class="stack-tag">REST API</span>
+            <span class="stack-tag">AWS</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       EXPERIENCE
+  ============================================================ -->
+  <section class="section" id="experience">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-num">04</span>
+        <h2 class="section-title">Experience</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="timeline">
+
+        <!-- JOB 1 -->
+        <div class="timeline-item">
+          <div class="tl-connector">
+            <div class="tl-dot"></div>
+            <div class="tl-line"></div>
+          </div>
+          <div class="tl-content">
+            <div class="tl-header">
+              <h3 class="job-title">Senior Developer &amp; AWS Cloud Engineer</h3>
+              <span class="job-period">Mar 2024 – Apr 2026</span>
+            </div>
+            <p class="job-company"><i class="fas fa-building"></i> Match Me Auto Group · Pasay, Philippines</p>
+            <ul class="job-bullets">
+              <li>Optimized AWS infrastructure, reconfiguring key services to improve performance and reduce monthly operational costs by <strong>37%</strong>.</li>
+              <li>Developed and automated a CI/CD pipeline using GitHub Actions, accelerating deployment processes by <strong>74%</strong> and improving release consistency.</li>
+              <li>Led system segmentation and initiated a shift to a modular monolithic architecture, deploying dedicated servers for specific functions and significantly enhancing reliability and scalability.</li>
+              <li>Maintained and provisioned production and development servers, ensuring system uptime and operational health.</li>
+            </ul>
+            <div class="job-tags">
+              <span class="tag sm">AWS</span>
+              <span class="tag sm">GitHub Actions</span>
+              <span class="tag sm">CI/CD</span>
+              <span class="tag sm">Laravel</span>
+              <span class="tag sm">Docker</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- JOB 2 -->
+        <div class="timeline-item">
+          <div class="tl-connector">
+            <div class="tl-dot"></div>
+            <div class="tl-line"></div>
+          </div>
+          <div class="tl-content">
+            <div class="tl-header">
+              <h3 class="job-title">Back End Engineer</h3>
+              <span class="job-period">Mar 2022 – Sep 2025</span>
+            </div>
+            <p class="job-company"><i class="fas fa-building"></i> Xctuality Ltd Pte · Singapore (Remote)</p>
+            <ul class="job-bullets">
+              <li>Developed the backend for a QR Generator app, helping the company gain <strong>12% more traction</strong> across its business network and product ecosystem.</li>
+              <li>Collaborated with the Tech Lead to design and optimize project workflows and code structure, improving team development efficiency by <strong>83%</strong>.</li>
+              <li>Engineered the backend for a communication platform connecting users with experts for personalized gardening advice.</li>
+              <li>Led a cross-functional team of a frontend engineer, mobile engineer, and myself as backend lead — delivering multiple client projects focused on security, performance, and custom functionality.</li>
+            </ul>
+            <div class="job-tags">
+              <span class="tag sm">PHP</span>
+              <span class="tag sm">Laravel</span>
+              <span class="tag sm">MySQL</span>
+              <span class="tag sm">REST API</span>
+              <span class="tag sm">NodeJS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- JOB 3 -->
+        <div class="timeline-item">
+          <div class="tl-connector">
+            <div class="tl-dot"></div>
+            <div class="tl-line"></div>
+          </div>
+          <div class="tl-content">
+            <div class="tl-header">
+              <h3 class="job-title">Software Engineer</h3>
+              <span class="job-period">Jul 2019 – Feb 2022</span>
+            </div>
+            <p class="job-company"><i class="fas fa-building"></i> Vaultech Inc. · Makati, Philippines</p>
+            <ul class="job-bullets">
+              <li>Led a team of four developers building a location-based service platform, overseeing the entire lifecycle from backend architecture to deployment.</li>
+              <li>Enhanced an online procurement system using Laravel and MySQL — improving stability, adding features, and optimizing UX for daily operations.</li>
+              <li>Developed a loan management system in Laravel, delivering a robust and user-friendly solution that streamlined loan processing and tracking.</li>
+              <li>Built a comprehensive monolithic admin CMS for the location-based service app, enabling intuitive administrative control and seamless data integration.</li>
+            </ul>
+            <div class="job-tags">
+              <span class="tag sm">Laravel</span>
+              <span class="tag sm">MySQL</span>
+              <span class="tag sm">jQuery</span>
+              <span class="tag sm">REST API</span>
+              <span class="tag sm">PHP</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- JOB 4 -->
+        <div class="timeline-item">
+          <div class="tl-connector">
+            <div class="tl-dot"></div>
+            <!-- No tl-line on last item -->
+          </div>
+          <div class="tl-content">
+            <div class="tl-header">
+              <h3 class="job-title">Software Engineer</h3>
+              <span class="job-period">Oct 2018 – Jun 2019</span>
+            </div>
+            <p class="job-company"><i class="fas fa-building"></i> Engage Outsourcing · Makati, Philippines</p>
+            <ul class="job-bullets">
+              <li>Maintained and developed new features for an accounting application, enhancing user experience using Laravel, MySQL, and jQuery.</li>
+            </ul>
+            <div class="job-tags">
+              <span class="tag sm">Laravel</span>
+              <span class="tag sm">MySQL</span>
+              <span class="tag sm">jQuery</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Education sub-section -->
+      <div class="section-heading" style="margin-top: 4rem;">
+        <span class="section-num">EDU</span>
+        <h2 class="section-title" style="font-size: 1.35rem;">Education &amp; Certifications</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="edu-grid">
+
+        <div class="edu-card">
+          <div class="edu-icon"><i class="fab fa-aws"></i></div>
+          <div class="edu-body">
+            <h4 class="edu-title">AWS Re/Start Program</h4>
+            <p class="edu-org">Amazon Web Services Philippines</p>
+            <span class="edu-year">2023</span>
+          </div>
+        </div>
+
+        <div class="edu-card">
+          <div class="edu-icon"><i class="fas fa-laptop-code"></i></div>
+          <div class="edu-body">
+            <h4 class="edu-title">I.T. Coding Bootcamp</h4>
+            <p class="edu-org">Tuitt (now Zuitt) · Quezon City, PH</p>
+            <span class="edu-year">2018</span>
+          </div>
+        </div>
+
+        <div class="edu-card">
+          <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+          <div class="edu-body">
+            <h4 class="edu-title">Diploma in ICT</h4>
+            <p class="edu-org">Rizal Technological University · Mandaluyong, PH</p>
+            <span class="edu-year">2016</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-copy">
+        <span class="footer-bracket">//</span>
+        Built by <strong>Joseph Bautista</strong> · GitHub Pages
+      </span>
+      <div class="footer-socials">
+        <a href="https://github.com/joseph-bautista"           target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/joseph-bautista"      target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.josephbautista.com"                target="_blank" title="Website"><i class="fas fa-globe"></i></a>
+        <a href="mailto:josephreuben.bautista@gmail.com"                        title="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
