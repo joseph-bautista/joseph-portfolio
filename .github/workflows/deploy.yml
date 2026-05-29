@@ -23,7 +23,9 @@ jobs:
 
       - name: Configure SSH
         run: |
+          cat > ~/.ssh/config <<EOF
           ${{ secrets.SSH_CONFIGURE }}
+          EOF
 
       - name: Deploy
         run: |
