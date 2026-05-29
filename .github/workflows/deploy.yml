@@ -1,4 +1,4 @@
-name: Deploy to Production
+name: Deploy
 
 on:
   push:
@@ -7,31 +7,47 @@ on:
 
 jobs:
   deploy:
-
     runs-on: ubuntu-latest
 
     steps:
+      - name: Install cloudflared
+        run: |
+          wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb
+          sudo dpkg -i cloudflared-linux-amd64.deb
 
-      - name: Deploy to production server
-        uses: appleboy/ssh-action@v1
+      - name: Setup SSH Key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SERVER_SSH_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
 
-        with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SERVER_SSH_KEY }}
+      - name: Configure SSH
+        run: |
+          cat > ~/.ssh/config <<EOF
+          Host myserver
+            HostName ssh.josephbautista.com
+            User joseph
+            IdentityFile ~/.ssh/id_ed25519
+            StrictHostKeyChecking no
+            ProxyCommand cloudflared access ssh --hostname %h
+          EOF
 
-          script: |
+      - name: Deploy
+        run: |
+          ssh myserver << 'EOF'
+            sudo su
 
-            cd /opt/portfolio
+            cd ${{ secrets.TARGET_DIR }}
 
             echo "Pulling latest code..."
-
             git pull origin main
 
-            echo "Rebuilding containers..."
+            echo "Building containers..."
+            docker compose build
 
-            docker compose up \
-              --build \
-              -d
+            echo "Restarting application..."
+            docker compose up -d
 
-            echo "Deployment complete!"
+            echo "Cleaning images..."
+            docker image prune -f
+          EOF
