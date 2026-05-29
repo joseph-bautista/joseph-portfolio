@@ -1,9 +1,0 @@
-# docker build -t portfolio .
-
-# docker stop portfolio-app || true
-# docker rm portfolio-app || true
-
-# docker run -d \
-#   --name portfolio-app \
-#   -p 8080:80 \
-#   portfolio
