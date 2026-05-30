@@ -1,16 +1,13 @@
 /* ================================================================
-   main.js — Joseph's Portfolio
-   Handles: dark/light toggle, active nav highlighting, scroll reveal
+   script.js — Joseph Bautista Portfolio
    ================================================================ */
 
 /* ----------------------------------------------------------------
    1. THEME TOGGLE
-   Dark / Light mode — persists preference in localStorage
    ---------------------------------------------------------------- */
 const themeToggle = document.getElementById('themeToggle');
 const html        = document.documentElement;
 
-// Load saved preference, default to dark
 const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
 html.setAttribute('data-theme', savedTheme);
 
@@ -23,10 +20,10 @@ themeToggle.addEventListener('click', () => {
 
 
 /* ----------------------------------------------------------------
-   2. ACTIVE NAV LINK — highlights the section you're in
+   2. ACTIVE NAV LINK
    ---------------------------------------------------------------- */
-const sections  = document.querySelectorAll('section[id]');
-const navLinks  = document.querySelectorAll('.nav-link');
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
 
 const navObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -37,48 +34,43 @@ const navObserver = new IntersectionObserver((entries) => {
       });
     }
   });
-}, {
-  rootMargin: '-40% 0px -55% 0px'
-});
+}, { rootMargin: '-40% 0px -55% 0px' });
 
 sections.forEach(s => navObserver.observe(s));
 
 
 /* ----------------------------------------------------------------
-   3. SCROLL REVEAL — fade + slide up elements on scroll
-   Add class="reveal" to any element in HTML to animate it in
+   3. SCROLL REVEAL
    ---------------------------------------------------------------- */
 const revealEls = document.querySelectorAll(
-  '.skill-card, .project-card, .timeline-item, .hero-content, .section-heading'
+  '.skill-card, .project-card, .timeline-item, .hero-content, .section-heading, .off-card, .edu-card, .code-comment-block, .off-intro'
 );
 
-// Stamp reveal class
 revealEls.forEach(el => el.classList.add('reveal'));
 
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry, i) => {
     if (entry.isIntersecting) {
-      // Stagger each card by 80ms
       setTimeout(() => {
         entry.target.classList.add('visible');
-      }, i * 80);
+      }, i * 70);
       revealObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.12 });
+}, { threshold: 0.1 });
 
 revealEls.forEach(el => revealObserver.observe(el));
 
 
 /* ----------------------------------------------------------------
-   4. SMOOTH ANCHOR SCROLLING — offset for fixed header
+   4. SMOOTH ANCHOR SCROLLING
    ---------------------------------------------------------------- */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', e => {
     const target = document.querySelector(anchor.getAttribute('href'));
     if (!target) return;
     e.preventDefault();
-    const offset = 70; // matches header height
+    const offset = 70;
     const top    = target.getBoundingClientRect().top + window.scrollY - offset;
     window.scrollTo({ top, behavior: 'smooth' });
   });
@@ -91,6 +83,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const header = document.querySelector('.site-header');
 window.addEventListener('scroll', () => {
   header.style.boxShadow = window.scrollY > 20
-    ? '0 4px 30px rgba(0,0,0,0.3)'
+    ? '0 4px 40px rgba(0,0,0,0.4)'
     : 'none';
 }, { passive: true });
