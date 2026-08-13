@@ -247,6 +247,14 @@ img { max-width: 100%; display: block; }
   border-radius: 999px;
   background: var(--bg-card);
 }
+a.htag {
+  text-decoration: none;
+  transition: color 0.2s, border-color 0.2s;
+}
+a.htag:hover {
+  color: var(--orange);
+  border-color: var(--border-accent);
+}
 .htag.mono { font-family: var(--font-mono); }
 .htag-dot {
   width: 6px; height: 6px;
