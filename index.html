@@ -2,10 +2,88 @@
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Joseph Bautista | Senior Software & Cloud Engineer</title>
-  <link rel="shortcut icon" type="image/png" href="assets/images/logo.png">
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joseph Bautista | Senior Backend &amp; AWS Cloud Engineer</title>
+  <meta name="description" content="Joseph Bautista is a senior backend and AWS cloud engineer with 7+ years building Laravel, PostgreSQL and AWS systems. Available for select freelance engagements: scalable APIs, cloud cost optimization, CI/CD and AI integrations." />
+  <meta name="author" content="Joseph Bautista" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#0a0b0a" />
+  <link rel="canonical" href="https://josephbautista.com/" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Joseph Bautista" />
+  <meta property="og:title" content="Joseph Bautista | Senior Backend &amp; AWS Cloud Engineer" />
+  <meta property="og:description" content="Scalable backends, AWS cost optimization, CI/CD automation and AI integrations for startups and growing teams." />
+  <meta property="og:url" content="https://josephbautista.com/" />
+  <meta property="og:image" content="https://josephbautista.com/assets/images/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Joseph Bautista, Senior Backend and AWS Cloud Engineer" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Joseph Bautista | Senior Backend &amp; AWS Cloud Engineer" />
+  <meta name="twitter:description" content="Scalable backends, AWS cost optimization, CI/CD automation and AI integrations for startups and growing teams." />
+  <meta name="twitter:image" content="https://josephbautista.com/assets/images/og-image.png" />
+
+  <link rel="icon" type="image/png" href="/assets/images/logo.png" />
+  <link rel="apple-touch-icon" href="/assets/images/logo.png" />
+
+  <!-- Apply saved / system theme before first paint -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('portfolio-theme');
+        var theme = saved || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+      document.documentElement.classList.add('js');
+    })();
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://josephbautista.com/#person",
+        "name": "Joseph Bautista",
+        "url": "https://josephbautista.com/",
+        "image": "https://josephbautista.com/assets/images/logo.png",
+        "jobTitle": "Senior Backend & AWS Cloud Engineer",
+        "description": "Senior software and AWS cloud engineer with 7+ years of experience building scalable Laravel, PostgreSQL and AWS systems.",
+        "address": { "@type": "PostalAddress", "addressLocality": "Metro Manila", "addressCountry": "PH" },
+        "alumniOf": { "@type": "CollegeOrUniversity", "name": "De La Salle – College of Saint Benilde" },
+        "knowsAbout": ["AWS", "Laravel", "PHP", "FastAPI", "PostgreSQL", "MySQL", "REST APIs", "CI/CD", "GitHub Actions", "Amazon Bedrock", "Cloud cost optimization", "System architecture"],
+        "sameAs": ["https://github.com/joseph-bautista", "https://linkedin.com/in/joseph-bautista"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://josephbautista.com/#website",
+        "url": "https://josephbautista.com/",
+        "name": "Joseph Bautista",
+        "publisher": { "@id": "https://josephbautista.com/#person" }
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://josephbautista.com/#service",
+        "name": "Joseph Bautista, Backend & Cloud Engineering",
+        "url": "https://josephbautista.com/",
+        "founder": { "@id": "https://josephbautista.com/#person" },
+        "areaServed": "Worldwide",
+        "serviceType": ["Backend and API development", "AWS cloud architecture and cost optimization", "CI/CD and release automation", "AI feature integration"]
+      }
+    ]
+  }
+  </script>
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GL81SELZNK"></script>
@@ -15,641 +93,503 @@
     gtag('js', new Date());
     gtag('config', 'G-GL81SELZNK');
   </script>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@300;400;500;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ============================================================ HEADER ============================================================ -->
+  <!-- Icon sprite -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <symbol id="i-mail" viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><polyline points="22,6 12,13 2,6"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
+    <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-repeat" viewBox="0 0 24 24"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></symbol>
+    <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  </svg>
+
+  <!-- ================================ HEADER ================================ -->
   <header class="site-header">
     <div class="header-inner">
-      <a class="logo" href="#">
-        <span class="logo-bracket">&lt;</span><span class="logo-name">Joseph Bautista</span><span class="logo-bracket">/&gt;</span>
+      <a class="logo" href="#top" aria-label="Joseph Bautista, back to top">
+        <span class="logo-mark" aria-hidden="true">JB</span>
+        <span class="logo-name">Joseph Bautista</span>
       </a>
-      <nav class="main-nav">
-        <a href="#summary"    class="nav-link" data-section="summary">about</a>
-        <a href="#skills"     class="nav-link" data-section="skills">skills</a>
-        <a href="#projects"   class="nav-link" data-section="projects">projects</a>
-        <a href="#experience" class="nav-link" data-section="experience">experience</a>
-        <a href="#offscreen"  class="nav-link" data-section="offscreen">off-screen</a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Primary">
+        <a href="#services"   class="nav-link" data-section="services">Services</a>
+        <a href="#work"       class="nav-link" data-section="work">Work</a>
+        <a href="#process"    class="nav-link" data-section="process">Process</a>
+        <a href="#experience" class="nav-link" data-section="experience">Experience</a>
+        <a href="#about"      class="nav-link" data-section="about">About</a>
       </nav>
+
       <div class="header-actions">
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-          <i class="fas fa-sun  icon-sun"></i>
-          <i class="fas fa-moon icon-moon"></i>
+        <button class="icon-btn theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark theme">
+          <svg class="icon icon-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+          <svg class="icon icon-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+        </button>
+        <a class="btn btn-primary btn-sm header-cta" href="#contact">Start a project</a>
+        <button class="icon-btn menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">
+          <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
         </button>
       </div>
     </div>
   </header>
 
+  <main id="main">
 
-  <!-- ============================================================ HERO ============================================================ -->
-  <section class="hero" id="summary">
+    <!-- ================================ HERO ================================ -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-bg" aria-hidden="true"></div>
 
-    <!-- Animated background -->
-    <div class="hero-bg" aria-hidden="true">
-      <div class="noise-overlay"></div>
-      <div class="scan-lines"></div>
-      <div class="court-lines">
-        <svg viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-          <!-- Basketball court half-court lines -->
-          <g class="court-svg" fill="none" stroke="rgba(255,90,0,0.07)" stroke-width="1.5">
-            <rect x="50" y="50" width="1100" height="600"/>
-            <circle cx="600" cy="350" r="180"/>
-            <circle cx="600" cy="350" r="20"/>
-            <line x1="600" y1="50" x2="600" y2="650"/>
-            <line x1="50" y1="50" x2="50" y2="650"/>
-            <rect x="50" y="175" width="280" height="350"/>
-            <rect x="50" y="225" width="190" height="250"/>
-            <path d="M 50 225 Q 240 350 50 475" />
-            <circle cx="195" cy="350" r="20"/>
-            <rect x="870" y="175" width="280" height="350"/>
-            <rect x="960" y="225" width="190" height="250"/>
-            <path d="M 1150 225 Q 960 350 1150 475" />
-            <circle cx="1005" cy="350" r="20"/>
-          </g>
-        </svg>
-      </div>
-      <div class="hero-orb orb-1"></div>
-      <div class="hero-orb orb-2"></div>
-    </div>
-
-    <!-- Main content -->
-    <div class="hero-content">
-      <div class="hero-tags">
-        <span class="htag"><span class="htag-dot"></span>Available for opportunities</span>
-        <span class="htag"><span class="htag-dot"></span>Open to relocation</span>
-        <a class="htag" href="https://joinhousemate.com" target="_blank" rel="noopener noreferrer"><span class="htag-dot"></span>Founder, HouseMate</a>
-        <span class="htag mono">Metro Manila, PH 📍</span>
-      </div>
-
-      <div class="hero-name-block">
-        <!-- <span class="name-label mono">// engineer </span> -->
-        <h1 class="hero-name">
-          <span class="name-first">Joseph</span>
-          <span class="name-last">Bautista</span>
-        </h1>
-      </div>
-
-      <p class="hero-role">
-        Senior Software &amp; Cloud Engineer &nbsp;·&nbsp; Founder, HouseMate &nbsp;·&nbsp; 7+ years
-      </p>
-
-      <p class="hero-bio">
-        I architect scalable backends, automate infrastructure on AWS, and obsess over system design.
-        When I'm not shipping code, I'm on the court, the trail, or on the road — always moving.
-      </p>
-
-      <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-val">7+</span>
-          <span class="stat-label">yrs shipping</span>
-        </div>
-        <div class="stat-sep"></div>
-        <div class="stat">
-          <span class="stat-val">↓37%</span>
-          <span class="stat-label">AWS costs cut</span>
-        </div>
-        <div class="stat-sep"></div>
-        <div class="stat">
-          <span class="stat-val">↑94%</span>
-          <span class="stat-label">deploy speed</span>
-        </div>
-      </div>
-
-      <div class="hero-contact">
-        <a href="mailto:josephreuben.bautista@gmail.com" class="contact-btn">
-          <i class="fas fa-envelope"></i> Email
-        </a>
-        <a href="https://github.com/joseph-bautista" target="_blank" class="contact-btn ghost">
-          <i class="fab fa-github"></i> GitHub
-        </a>
-        <a href="https://linkedin.com/in/joseph-bautista" target="_blank" class="contact-btn ghost">
-          <i class="fab fa-linkedin"></i> LinkedIn
-        </a>
-      </div>
-    </div>
-
-    <!-- Terminal -->
-    <div class="terminal-widget">
-      <div class="terminal-topbar">
-        <span class="dot dot-red"></span>
-        <span class="dot dot-yellow"></span>
-        <span class="dot dot-green"></span>
-        <span class="terminal-label mono">joseph@cloud:~$</span>
-      </div>
-      <div class="terminal-body">
-        <div class="t-line"><span class="t-prompt">$</span> whoami</div>
-        <div class="t-out t-name">Joseph Bautista</div>
-
-        <div class="t-line"><span class="t-prompt">$</span> stack --primary</div>
-        <div class="t-out t-orange">PHP · Laravel · AWS · PostgreSQL · JS</div>
-
-        <div class="t-line"><span class="t-prompt">$</span> cat wins.log</div>
-        <div class="t-out"><span class="t-orange">↓37%</span> AWS cost · <span class="t-orange">↑94%</span> CI/CD speed</div>
-        <div class="t-out"><span class="t-orange">+12%</span> product traction · <span class="t-orange">↑83%</span> dev efficiency</div>
-
-        <div class="t-line"><span class="t-prompt">$</span> life --outside-code</div>
-        <div class="t-out t-muted">🏀 court · 🏋️ iron · 🏍️ open roads</div>
-        <div class="t-out t-muted">🥾 trails · 🌿 nature · 👨‍👩‍👧‍👦 family</div>
-
-        <div class="t-line"><span class="t-prompt">$</span> hosting</div>
-        <div class="t-out t-muted">Running this page on my home server</div>
-
-        <div class="t-line"><span class="t-prompt t-blink">$</span> <span class="cursor-block">_</span></div>
-      </div>
-    </div>
-
-    <!-- Scroll hint -->
-    <div class="scroll-hint" aria-hidden="true">
-      <span class="mono scroll-text">scroll</span>
-      <div class="scroll-arrow"></div>
-    </div>
-  </section>
-
-
-  <!-- ============================================================ SKILLS ============================================================ -->
-  <section class="section" id="skills">
-    <div class="container">
-      <div class="section-heading">
-        <span class="section-label mono">02 // skills</span>
-        <h2 class="section-title">What I Build With</h2>
-      </div>
-
-      <div class="skills-grid">
-
-        <div class="skill-card">
-          <div class="skill-icon-wrap"><i class="fas fa-cloud"></i></div>
-          <h3>Cloud &amp; Infrastructure</h3>
-          <div class="tag-group">
-            <span class="tag">AWS EC2</span>
-            <span class="tag">AWS S3</span>
-            <span class="tag">AWS RDS</span>
-            <span class="tag">IAM</span>
-            <span class="tag">Route 53</span>
-            <span class="tag">CloudFront</span>
-            <span class="tag">Lightsail</span>
-          </div>
-        </div>
-
-        <div class="skill-card">
-          <div class="skill-icon-wrap"><i class="fas fa-code"></i></div>
-          <h3>Backend Engineering</h3>
-          <div class="tag-group">
-            <span class="tag">PHP</span>
-            <span class="tag">Laravel</span>
-            <span class="tag">JavaScript</span>
-            <span class="tag">ExpressJS</span>
-            <span class="tag">REST APIs</span>
-          </div>
-        </div>
-
-        <div class="skill-card">
-          <div class="skill-icon-wrap"><i class="fas fa-database"></i></div>
-          <h3>Databases</h3>
-          <div class="tag-group">
-            <span class="tag">MySQL</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">Schema Design</span>
-            <span class="tag">Query Optimization</span>
-            <span class="tag">Migrations</span>
-          </div>
-        </div>
-
-        <div class="skill-card">
-          <div class="skill-icon-wrap"><i class="fas fa-wrench"></i></div>
-          <h3>Tools &amp; Practices</h3>
-          <div class="tag-group">
-            <span class="tag">Git &amp; GitHub</span>
-            <span class="tag">CI/CD</span>
-            <span class="tag">GitHub Actions</span>
-            <span class="tag">Postman</span>
-            <span class="tag">Linux / Bash</span>
-            <span class="tag">jQuery</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ============================================================ PROJECTS ============================================================ -->
-  <section class="section section-alt" id="projects">
-    <div class="container">
-      <div class="section-heading">
-        <span class="section-label mono">03 // projects</span>
-        <h2 class="section-title">Things I've Shipped</h2>
-      </div>
-
-      <div class="projects-grid">
-
-        <div class="project-card">
-          <div class="project-num mono">01</div>
-          <div class="project-card-header">
-            <span class="project-type">Startup · Marketplace</span>
-            <div class="project-links">
-              <a href="https://joinhousemate.com" target="_blank" rel="noopener noreferrer" title="Live Demo"><i class="fas fa-arrow-up-right-from-square"></i></a>
-            </div>
-          </div>
-          <h3 class="project-title">HouseMate</h3>
-          <p class="project-desc">
-            HouseMate began as a school paper at De La Salle – College of Saint Benilde.
-            It is a rental marketplace and household management platform connecting
-            property owners with renters. It centralizes listings, tenant management, rent
-            tracking, maintenance, messaging, and shared household expenses. Currently in waitlist.
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">
+            <span class="status-dot" aria-hidden="true"></span>
+            Open to select freelance engagements
           </p>
-          <div class="project-stack">
-            <span class="stack-tag">FastAPI</span>
-            <span class="stack-tag">React</span>
-            <span class="stack-tag">PostgreSQL</span>
-          </div>
-        </div>
 
-        <div class="project-card">
-          <div class="project-num mono">02</div>
-          <div class="project-card-header">
-            <span class="project-type">Platform · API</span>
-            <div class="project-links">
-              <a href="https://valtorsolutions.com/products" target="_blank" title="Live Demo"><i class="fas fa-arrow-up-right-from-square"></i></a>
-            </div>
-          </div>
-          <h3 class="project-title">AI-Powered Procurement Platform</h3>
-          <p class="project-desc">
-            Built the backend and AWS infrastructure for both the customer-facing platform
-            and admin CRM, delivering real-time services plus a full admin CMS for backend management.
+          <h1 class="hero-title" id="hero-title">
+            Backend &amp; cloud engineering for products that have to <em>scale</em>.
+          </h1>
+
+          <p class="hero-lede">
+            I'm Joseph Bautista, a senior software and AWS cloud engineer with 7+ years
+            shipping Laravel, PostgreSQL and AWS systems for startups and growing teams.
+            I design the architecture, automate the delivery, and keep the cloud bill honest.
           </p>
-          <div class="project-stack">
-            <span class="stack-tag">Laravel</span>
-            <span class="stack-tag">PostgreSQL</span>
-            <span class="stack-tag">REST API</span>
-            <span class="stack-tag">AWS</span>
-            <span class="stack-tag">Amazon Bedrock</span>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="mailto:josephreuben.bautista@gmail.com?subject=Project%20inquiry">
+              Start a project
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+            </a>
+            <a class="btn btn-ghost" href="#work">See selected work</a>
           </div>
         </div>
 
-        <div class="project-card">
-          <div class="project-num mono">03</div>
-          <div class="project-card-header">
-            <span class="project-type">Infrastructure · DevOps</span>
-            <div class="project-links">
-              <a href="https://www.matchmecarfinance.co.uk/" target="_blank" title="Live Demo"><i class="fas fa-arrow-up-right-from-square"></i></a>
+        <aside class="snapshot" aria-label="Profile snapshot">
+          <dl class="snapshot-list">
+            <div>
+              <dt>Focus</dt>
+              <dd>Backend systems, AWS architecture, CI/CD</dd>
             </div>
-          </div>
-          <h3 class="project-title">AWS CI/CD Pipeline</h3>
-          <p class="project-desc">
-            Designed and automated a full CI/CD pipeline using GitHub Actions for a
-            multi-server AWS environment. Accelerated deployments by <strong>74%</strong> and
-            eliminated manual release steps.
+            <div>
+              <dt>Core stack</dt>
+              <dd>Laravel · FastAPI · PostgreSQL · AWS</dd>
+            </div>
+            <div>
+              <dt>Currently</dt>
+              <dd>Senior Software Engineer, Uni-President Information Philippines</dd>
+            </div>
+            <div>
+              <dt>Also building</dt>
+              <dd><a class="text-link" href="https://joinhousemate.com" target="_blank" rel="noopener noreferrer">HouseMate</a>, a rental &amp; household platform</dd>
+            </div>
+            <div>
+              <dt>Based in</dt>
+              <dd>Metro Manila, PH · working remotely with global teams</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+
+      <div class="hero-inner">
+        <ul class="proof" aria-label="Selected results">
+          <li><span class="proof-val">7+</span><span class="proof-label">years shipping production systems</span></li>
+          <li><span class="proof-val">−37%</span><span class="proof-label">monthly AWS spend, Match Me Auto Group</span></li>
+          <li><span class="proof-val">−94%</span><span class="proof-label">deploy time with GitHub Actions, Valtor Solutions</span></li>
+          <li><span class="proof-val">+83%</span><span class="proof-label">team dev efficiency, Xctuality</span></li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- ================================ SERVICES ================================ -->
+    <section class="section" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-label">Services</p>
+          <h2 class="section-title" id="services-title">What I can take off your plate</h2>
+          <p class="section-intro">
+            Senior engineering for teams that need the backend, the cloud and the delivery pipeline
+            done properly, without hiring a whole department.
           </p>
-          <div class="project-stack">
-            <span class="stack-tag">GitHub Actions</span>
-            <span class="stack-tag">AWS</span>
-            <span class="stack-tag">Bash</span>
-          </div>
-        </div>
+        </header>
 
-        <div class="project-card">
-          <div class="project-num mono">04</div>
-          <div class="project-card-header">
-            <span class="project-type">Backend · AWS</span>
-            <div class="project-links">
-              <a href="https://qr.xctuality.com/" target="_blank" title="Live Demo"><i class="fas fa-arrow-up-right-from-square"></i></a>
+        <div class="services-grid">
+          <article class="service reveal">
+            <svg class="icon icon-lg" aria-hidden="true"><use href="#i-layers"/></svg>
+            <h3>Backend &amp; API engineering</h3>
+            <p>Clean, well-structured APIs and services in Laravel, FastAPI and Node. Schema design, query optimization and modular architecture that stays maintainable as the product grows.</p>
+            <ul class="tag-group">
+              <li class="tag">Laravel</li><li class="tag">FastAPI</li><li class="tag">PostgreSQL</li><li class="tag">MySQL</li><li class="tag">REST APIs</li>
+            </ul>
+          </article>
+
+          <article class="service reveal">
+            <svg class="icon icon-lg" aria-hidden="true"><use href="#i-cloud"/></svg>
+            <h3>AWS architecture &amp; cost optimization</h3>
+            <p>Reliable, secure infrastructure on AWS, built to the size you actually need. Trimmed monthly spend by <strong>37%</strong> on a live production environment.</p>
+            <ul class="tag-group">
+              <li class="tag">EC2</li><li class="tag">RDS</li><li class="tag">S3</li><li class="tag">CloudFront</li><li class="tag">Route 53</li><li class="tag">IAM</li>
+            </ul>
+          </article>
+
+          <article class="service reveal">
+            <svg class="icon icon-lg" aria-hidden="true"><use href="#i-repeat"/></svg>
+            <h3>CI/CD &amp; release automation</h3>
+            <p>Automated pipelines that replace manual release steps and make shipping routine. Deployments up to <strong>94%</strong> faster across multi-server AWS environments.</p>
+            <ul class="tag-group">
+              <li class="tag">GitHub Actions</li><li class="tag">Docker</li><li class="tag">Bash</li><li class="tag">Linux</li>
+            </ul>
+          </article>
+
+          <article class="service reveal">
+            <svg class="icon icon-lg" aria-hidden="true"><use href="#i-cpu"/></svg>
+            <h3>AI-powered product features</h3>
+            <p>Practical LLM features wired into real workflows, such as a BOQ engine built on Claude and Amazon Bedrock for construction procurement.</p>
+            <ul class="tag-group">
+              <li class="tag">Amazon Bedrock</li><li class="tag">Claude</li><li class="tag">Laravel</li><li class="tag">AWS</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================================ WORK ================================ -->
+    <section class="section section-alt" id="work" aria-labelledby="work-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-label">Selected work</p>
+          <h2 class="section-title" id="work-title">Things I've shipped</h2>
+        </header>
+
+        <div class="work-list">
+
+          <article class="work-item reveal">
+            <div class="work-meta">
+              <span class="work-num">01</span>
+              <span class="work-type">Startup · Marketplace</span>
             </div>
+            <div class="work-body">
+              <h3 class="work-title">
+                <a href="https://joinhousemate.com" target="_blank" rel="noopener noreferrer">HouseMate<svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+              </h3>
+              <p>
+                A rental marketplace and household management platform connecting property owners with renters.
+                It began as a school paper at De La Salle – College of Saint Benilde and now centralizes listings,
+                tenant management, rent tracking, maintenance, messaging and shared household expenses.
+                Currently in waitlist.
+              </p>
+              <ul class="tag-group"><li class="tag">FastAPI</li><li class="tag">React</li><li class="tag">PostgreSQL</li></ul>
+            </div>
+            <p class="work-result"><span>Status</span>Waitlist open</p>
+          </article>
+
+          <article class="work-item reveal">
+            <div class="work-meta">
+              <span class="work-num">02</span>
+              <span class="work-type">Platform · AI &amp; API</span>
+            </div>
+            <div class="work-body">
+              <h3 class="work-title">
+                <a href="https://valtorsolutions.com/products" target="_blank" rel="noopener noreferrer">AI-powered procurement platform<svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+              </h3>
+              <p>
+                Built the backend and AWS infrastructure for both the customer-facing platform and the admin CRM,
+                delivering real-time services, a full admin CMS and an AI engine for BOQ procurement workflows.
+              </p>
+              <ul class="tag-group"><li class="tag">Laravel</li><li class="tag">PostgreSQL</li><li class="tag">AWS</li><li class="tag">Amazon Bedrock</li></ul>
+            </div>
+            <p class="work-result"><span>Result</span>−94% deploy time</p>
+          </article>
+
+          <article class="work-item reveal">
+            <div class="work-meta">
+              <span class="work-num">03</span>
+              <span class="work-type">Infrastructure · DevOps</span>
+            </div>
+            <div class="work-body">
+              <h3 class="work-title">
+                <a href="https://www.matchmecarfinance.co.uk/" target="_blank" rel="noopener noreferrer">AWS cost &amp; CI/CD overhaul<svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+              </h3>
+              <p>
+                Optimized a multi-server AWS environment and designed a full GitHub Actions pipeline,
+                eliminating manual release steps and shifting the system toward a modular monolith.
+              </p>
+              <ul class="tag-group"><li class="tag">AWS</li><li class="tag">GitHub Actions</li><li class="tag">Docker</li><li class="tag">Laravel</li></ul>
+            </div>
+            <p class="work-result"><span>Result</span>−37% AWS cost<br />+74% deploy speed</p>
+          </article>
+
+          <article class="work-item reveal">
+            <div class="work-meta">
+              <span class="work-num">04</span>
+              <span class="work-type">Backend · SaaS</span>
+            </div>
+            <div class="work-body">
+              <h3 class="work-title">
+                <a href="https://qr.xctuality.com/" target="_blank" rel="noopener noreferrer">QR generator platform<svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+              </h3>
+              <p>
+                Backend for a QR code generation app: Laravel REST APIs handling dynamic QR generation,
+                analytics and user management.
+              </p>
+              <ul class="tag-group"><li class="tag">Laravel</li><li class="tag">MySQL</li><li class="tag">REST API</li><li class="tag">AWS</li></ul>
+            </div>
+            <p class="work-result"><span>Result</span>+12% business traction</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================================ PROCESS ================================ -->
+    <section class="section" id="process" aria-labelledby="process-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-label">How I work</p>
+          <h2 class="section-title" id="process-title">A simple, predictable way to build</h2>
+        </header>
+
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step-num">01</span>
+            <h3>Scope</h3>
+            <p>We align on the problem, constraints and what success looks like before any code is written.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-num">02</span>
+            <h3>Architect</h3>
+            <p>A right-sized design for data, services and infrastructure, with trade-offs explained plainly.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-num">03</span>
+            <h3>Build &amp; automate</h3>
+            <p>Incremental delivery behind CI/CD, so you see working software early and often.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-num">04</span>
+            <h3>Hand over</h3>
+            <p>Documentation and clean hand-off so your team can own and extend what was built.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+
+    <!-- ================================ EXPERIENCE ================================ -->
+    <section class="section section-alt" id="experience" aria-labelledby="experience-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-label">Experience</p>
+          <h2 class="section-title" id="experience-title">Where I've worked</h2>
+        </header>
+
+        <ol class="timeline">
+
+          <li class="job reveal">
+            <p class="job-period">Jun 2026 – Present</p>
+            <div class="job-main">
+              <h3 class="job-title">Senior Software Engineer</h3>
+              <p class="job-company">Uni-President Information Philippines Corp. · Pasig, Philippines</p>
+              <ul class="job-bullets">
+                <li>Joined two time-critical projects and accelerated delivery to help meet key deadlines.</li>
+                <li>Completed the remaining development tasks and produced technical documentation for a project delivered on schedule.</li>
+                <li>Contributed to a high-priority project at risk of missing its timeline, working closely with the team to improve delivery progress.</li>
+                <li>Collaborated with cross-functional teams to resolve implementation issues and keep execution on track.</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="job reveal">
+            <p class="job-period">Jun 2026 – Present</p>
+            <div class="job-main">
+              <h3 class="job-title">Builder &amp; Founder</h3>
+              <p class="job-company">HouseMate</p>
+              <ul class="job-bullets">
+                <li>Building HouseMate from a school paper at DLS-CSB into a rental marketplace and household management platform.</li>
+                <li>Built the waitlist landing page and product direction covering listings, tenant management, rent tracking, maintenance, messaging and shared expenses.</li>
+                <li>Architected the stack with FastAPI, React and PostgreSQL; self-hosting today with a path to AWS as the product scales.</li>
+              </ul>
+              <ul class="tag-group"><li class="tag sm">FastAPI</li><li class="tag sm">React</li><li class="tag sm">PostgreSQL</li></ul>
+            </div>
+          </li>
+
+          <li class="job reveal">
+            <p class="job-period">Jun 2025 – Present</p>
+            <div class="job-main">
+              <h3 class="job-title">Software &amp; AWS Cloud Engineer</h3>
+              <p class="job-company">Freelance · Valtor Solutions Inc. · Remote</p>
+              <ul class="job-bullets">
+                <li>Architected an AI-powered construction procurement platform using <strong>Laravel, PostgreSQL and AWS</strong>.</li>
+                <li>Led technical architecture and engineering strategy for the founding team.</li>
+                <li>Automated CI/CD pipelines with <strong>GitHub Actions</strong>, reducing deploy time by <strong>94%</strong>.</li>
+                <li>Built a BOQ AI engine using <strong>Claude</strong> and <strong>Amazon Bedrock</strong> for procurement workflows.</li>
+              </ul>
+              <ul class="tag-group"><li class="tag sm">AWS</li><li class="tag sm">GitHub Actions</li><li class="tag sm">Laravel</li><li class="tag sm">Docker</li><li class="tag sm">Amazon Bedrock</li></ul>
+            </div>
+          </li>
+
+          <li class="job reveal">
+            <p class="job-period">Mar 2024 – Apr 2026</p>
+            <div class="job-main">
+              <h3 class="job-title">Senior Developer &amp; AWS Cloud Engineer</h3>
+              <p class="job-company">Match Me Auto Group · Pasay, Philippines</p>
+              <ul class="job-bullets">
+                <li>Optimized AWS infrastructure, reducing monthly costs by <strong>37%</strong>.</li>
+                <li>Automated the CI/CD pipeline with GitHub Actions, accelerating deployments by <strong>74%</strong>.</li>
+                <li>Led system segmentation and the shift to a modular monolithic architecture.</li>
+              </ul>
+              <ul class="tag-group"><li class="tag sm">AWS</li><li class="tag sm">GitHub Actions</li><li class="tag sm">Laravel</li><li class="tag sm">Docker</li></ul>
+            </div>
+          </li>
+
+          <li class="job reveal">
+            <p class="job-period">Mar 2022 – Sep 2025</p>
+            <div class="job-main">
+              <h3 class="job-title">Back End Engineer</h3>
+              <p class="job-company">Xctuality Ltd Pte · Singapore (Remote)</p>
+              <ul class="job-bullets">
+                <li>Developed the backend for a QR generator app, driving <strong>12% more traction</strong> across the business network.</li>
+                <li>Improved team dev efficiency by <strong>83%</strong> through workflow and code structure optimization.</li>
+                <li>Led a cross-functional team (frontend, mobile, backend) delivering multiple client projects.</li>
+              </ul>
+              <ul class="tag-group"><li class="tag sm">PHP</li><li class="tag sm">Laravel</li><li class="tag sm">MySQL</li><li class="tag sm">NodeJS</li><li class="tag sm">Docker</li></ul>
+            </div>
+          </li>
+
+          <li class="job reveal">
+            <p class="job-period">Jul 2019 – Feb 2022</p>
+            <div class="job-main">
+              <h3 class="job-title">Software Engineer</h3>
+              <p class="job-company">Vaultech Inc. · Makati, Philippines</p>
+              <ul class="job-bullets">
+                <li>Led a team of four building a location-based service platform end to end.</li>
+                <li>Enhanced a procurement system and built a loan management system in Laravel and MySQL.</li>
+              </ul>
+              <ul class="tag-group"><li class="tag sm">Laravel</li><li class="tag sm">MySQL</li><li class="tag sm">jQuery</li><li class="tag sm">PHP</li></ul>
+            </div>
+          </li>
+
+          <li class="job reveal">
+            <p class="job-period">Oct 2018 – Jun 2019</p>
+            <div class="job-main">
+              <h3 class="job-title">Software Engineer</h3>
+              <p class="job-company">Engage Outsourcing · Makati, Philippines</p>
+              <ul class="job-bullets">
+                <li>Maintained and developed features for an accounting application using Laravel, MySQL and jQuery.</li>
+              </ul>
+            </div>
+          </li>
+
+        </ol>
+
+        <div class="edu reveal">
+          <h3 class="edu-title">Education &amp; certifications</h3>
+          <ul class="edu-grid">
+            <li>
+              <span class="edu-name">BS Information Systems (ETEEAP, ongoing)</span>
+              <span class="edu-meta">De La Salle – College of Saint Benilde · 2026 – Present</span>
+            </li>
+            <li>
+              <span class="edu-name">AWS Re/Start Program</span>
+              <span class="edu-meta">Amazon Web Services Philippines · 2023</span>
+            </li>
+            <li>
+              <span class="edu-name">I.T. Coding Bootcamp</span>
+              <span class="edu-meta">Zuitt · Quezon City · 2018</span>
+            </li>
+            <li>
+              <span class="edu-name">Diploma in ICT</span>
+              <span class="edu-meta">Rizal Technological University · 2016</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================================ ABOUT ================================ -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container about">
+        <header class="section-head reveal">
+          <p class="section-label">About</p>
+          <h2 class="section-title" id="about-title">Engineer first, always moving</h2>
+        </header>
+
+        <div class="about-grid">
+          <div class="about-copy reveal">
+            <p>
+              I'm a husband and father of a young family, and an engineer who cares about systems that are
+              simple to run and honest about what they cost. Clients get a single senior point of contact who
+              can reason about the product, the code and the infrastructure together.
+            </p>
+            <p>
+              Away from the keyboard, the court, the gym and the trail keep me sharp. They also shape how
+              I work: consistency over heroics, form over ego, and patience on the long climb.
+            </p>
           </div>
-          <h3 class="project-title">QR Generator Platform</h3>
-          <p class="project-desc">
-            Backend system for a QR code generation app that helped the business gain
-            12% more traction. Built REST APIs in Laravel to handle dynamic QR generation,
-            analytics, and user management.
+
+          <ul class="beyond reveal">
+            <li><span class="beyond-name">Basketball</span><span class="beyond-note">Teamwork and reading the play.</span></li>
+            <li><span class="beyond-name">Gym</span><span class="beyond-note">Progressive overload, applied to code.</span></li>
+            <li><span class="beyond-name">Hiking &amp; nature</span><span class="beyond-note">One step at a time, eyes on the summit.</span></li>
+            <li><span class="beyond-name">Family &amp; travel</span><span class="beyond-note">The highest priority, and the best perspective.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================================ CONTACT ================================ -->
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact-card reveal">
+          <p class="section-label">Contact</p>
+          <h2 class="contact-title" id="contact-title">Have a system that needs to <em>scale</em>?</h2>
+          <p class="contact-lede">
+            Tell me a little about the product, the stack and where it hurts. I'll reply with how I'd approach it.
           </p>
-          <div class="project-stack">
-            <span class="stack-tag">Laravel</span>
-            <span class="stack-tag">MySQL</span>
-            <span class="stack-tag">REST API</span>
-            <span class="stack-tag">AWS</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ============================================================ EXPERIENCE ============================================================ -->
-  <section class="section" id="experience">
-    <div class="container">
-      <div class="section-heading">
-        <span class="section-label mono">04 // experience</span>
-        <h2 class="section-title">Where I've Worked</h2>
-      </div>
-
-      <div class="timeline">
-
-        <div class="timeline-item">
-          <div class="tl-left">
-            <span class="tl-period mono">June 2026 – Present</span>
-            <div class="tl-dot active"></div>
-          </div>
-          <div class="tl-content">
-            <h3 class="job-title">Builder</h3>
-            <p class="job-company"><i class="fas fa-building"></i> HouseMate</p>
-            <ul class="job-bullets">
-              <li>Building HouseMate from a school paper at De La Salle – College of Saint Benilde (DLS-CSB) — a rental marketplace and household management platform connecting property owners with renters.</li>
-              <li>Built the waitlist landing page and product direction covering listings, tenant management, rent tracking, maintenance, messaging, and shared household expenses.</li>
-              <li>Architected the stack with FastAPI, React, and PostgreSQL; self-hosting today with a path to AWS as the product scales.</li>
-            </ul>
-            <div class="job-tags">
-              <span class="tag sm">FastAPI</span>
-              <span class="tag sm">React</span>
-              <span class="tag sm">PostgreSQL</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="tl-left">
-            <span class="tl-period mono">Jun 2026 – Present</span>
-            <div class="tl-dot"></div>
-          </div>
-          <div class="tl-content">
-            <h3 class="job-title">Senior Software Engineer</h3>
-            <p class="job-company"><i class="fas fa-building"></i> Uni-President Information Philippines Corp. · Pasig, Philippines</p>
-            <ul class="job-bullets">
-              <li>Joined two time-critical projects and accelerated delivery to help meet key project deadlines.</li>
-              <li>Completed the remaining development tasks and produced technical documentation for a project that was successfully delivered on schedule.</li>
-              <li>Contributed to the development of another high-priority project that was at risk of missing its delivery timeline, working closely with the team to improve delivery progress.</li>
-              <li>Collaborated with cross-functional teams to resolve implementation issues and ensure timely project execution.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="tl-left">
-            <span class="tl-period mono">Jun 2025 – Present</span>
-            <div class="tl-dot"></div>
-          </div>
-          <div class="tl-content">
-            <h3 class="job-title">Software &amp; AWS Cloud Engineer</h3>
-            <p class="job-company"><i class="fas fa-building"></i> Freelance · Valtor Solutions Inc. · Bicol, Philippines (Remote)</p>
-            <ul class="job-bullets">
-              <li>Architected AI-powered construction procurement platform using <strong>Laravel, PostgreSQL, and AWS</strong>.</li>
-              <li>Led technical architecture and engineering strategy for the founding team.</li>
-              <li>Automated CI/CD pipelines with <strong>GitHub Actions</strong>, reducing deploy time by <strong>94%</strong>.</li>
-              <li>Built a BOQ AI engine using <strong>Claude AI</strong> and <strong>Amazon Bedrock</strong> for procurement workflows.</li>
-            </ul>
-            <div class="job-tags">
-              <span class="tag sm">AWS</span>
-              <span class="tag sm">GitHub Actions</span>
-              <span class="tag sm">Laravel</span>
-              <span class="tag sm">Docker</span>
-              <span class="tag sm">Claude AI</span>
-              <span class="tag sm">Amazon Bedrock</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="tl-left">
-            <span class="tl-period mono">Mar 2024 – Apr 2026</span>
-            <div class="tl-dot"></div>
-          </div>
-          <div class="tl-content">
-            <h3 class="job-title">Senior Developer &amp; AWS Cloud Engineer</h3>
-            <p class="job-company"><i class="fas fa-building"></i> Match Me Auto Group · Pasay, Philippines</p>
-            <ul class="job-bullets">
-              <li>Optimized AWS infrastructure, reducing monthly costs by <strong>37%</strong>.</li>
-              <li>Automated CI/CD pipeline with GitHub Actions, accelerating deployments by <strong>74%</strong>.</li>
-              <li>Led system segmentation and modular monolithic architecture shift.</li>
-            </ul>
-            <div class="job-tags">
-              <span class="tag sm">AWS</span>
-              <span class="tag sm">GitHub Actions</span>
-              <span class="tag sm">Laravel</span>
-              <span class="tag sm">Docker</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="tl-left">
-            <span class="tl-period mono">Mar 2022 – Sep 2025</span>
-            <div class="tl-dot"></div>
-          </div>
-          <div class="tl-content">
-            <h3 class="job-title">Back End Engineer</h3>
-            <p class="job-company"><i class="fas fa-building"></i> Xctuality Ltd Pte · Singapore (Remote)</p>
-            <ul class="job-bullets">
-              <li>Developed backend for QR Generator app — drove <strong>12% more traction</strong> across business network.</li>
-              <li>Improved team dev efficiency by <strong>83%</strong> through workflow and code structure optimization.</li>
-              <li>Led cross-functional team (frontend, mobile, backend) delivering multiple client projects.</li>
-            </ul>
-            <div class="job-tags">
-              <span class="tag sm">PHP</span>
-              <span class="tag sm">Laravel</span>
-              <span class="tag sm">MySQL</span>
-              <span class="tag sm">NodeJS</span>
-              <span class="tag sm">Docker</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="tl-left">
-            <span class="tl-period mono">Jul 2019 – Feb 2022</span>
-            <div class="tl-dot"></div>
-          </div>
-          <div class="tl-content">
-            <h3 class="job-title">Software Engineer</h3>
-            <p class="job-company"><i class="fas fa-building"></i> Vaultech Inc. · Makati, Philippines</p>
-            <ul class="job-bullets">
-              <li>Led team of four building a location-based service platform end-to-end.</li>
-              <li>Enhanced procurement system and built loan management system in Laravel &amp; MySQL.</li>
-            </ul>
-            <div class="job-tags">
-              <span class="tag sm">Laravel</span>
-              <span class="tag sm">MySQL</span>
-              <span class="tag sm">jQuery</span>
-              <span class="tag sm">PHP</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="tl-left">
-            <span class="tl-period mono">Oct 2018 – Jun 2019</span>
-            <div class="tl-dot"></div>
-          </div>
-          <div class="tl-content">
-            <h3 class="job-title">Software Engineer</h3>
-            <p class="job-company"><i class="fas fa-building"></i> Engage Outsourcing · Makati, Philippines</p>
-            <ul class="job-bullets">
-              <li>Maintained and developed features for an accounting application using Laravel, MySQL, and jQuery.</li>
-            </ul>
-            <div class="job-tags">
-              <span class="tag sm">Laravel</span>
-              <span class="tag sm">MySQL</span>
-              <span class="tag sm">jQuery</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Education -->
-      <div class="section-heading" style="margin-top: 5rem;">
-        <span class="section-label mono">EDU // education</span>
-        <h2 class="section-title" style="font-size:1.4rem;">Education &amp; Certifications</h2>
-      </div>
-
-      <div class="edu-grid">
-        <div class="edu-card">
-          <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
-          <div class="edu-body">
-            <h4>Bachelor of Science in Information Systems (ETEEAP - ongoing)</h4>
-            <p>De La Salle - College of Saint Benilde · Manila, PH</p>
-            <span class="edu-year mono">2026 – Present</span>
-          </div>
-        </div>
-        <div class="edu-card">
-          <div class="edu-icon"><i class="fab fa-aws"></i></div>
-          <div class="edu-body">
-            <h4>AWS Re/Start Program</h4>
-            <p>Amazon Web Services Philippines</p>
-            <span class="edu-year mono">2023</span>
-          </div>
-        </div>
-        <div class="edu-card">
-          <div class="edu-icon"><i class="fas fa-laptop-code"></i></div>
-          <div class="edu-body">
-            <h4>I.T. Coding Bootcamp</h4>
-            <p>Zuitt · Quezon City, PH</p>
-            <span class="edu-year mono">2018</span>
-          </div>
-        </div>
-        <div class="edu-card">
-          <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
-          <div class="edu-body">
-            <h4>Diploma in ICT</h4>
-            <p>Rizal Technological University · Mandaluyong, PH</p>
-            <span class="edu-year mono">2016</span>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="mailto:josephreuben.bautista@gmail.com?subject=Project%20inquiry">
+              <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>
+              josephreuben.bautista@gmail.com
+            </a>
+            <a class="btn btn-ghost" href="https://linkedin.com/in/joseph-bautista" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg>
+              LinkedIn
+            </a>
+            <a class="btn btn-ghost" href="https://github.com/joseph-bautista" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>
+              GitHub
+            </a>
           </div>
         </div>
       </div>
+    </section>
 
-    </div>
-  </section>
-
-
-  <!-- ============================================================ OFF-SCREEN ============================================================ -->
-  <section class="section off-section" id="offscreen">
-    <div class="container">
-      <div class="section-heading">
-        <span class="section-label mono">05 // off-screen</span>
-        <h2 class="section-title">Beyond The Code</h2>
-      </div>
-
-      <p class="off-intro">
-        Building software is what I do, but curiosity and continuous growth drive everything around it. Here’s a look at what keeps me learning, creating, and moving outside of development.
-      </p>
-
-      <div class="off-grid">
-
-        <div class="off-card" data-hobby="basketball">
-          <div class="off-card-bg"></div>
-          <div class="off-icon">🏀</div>
-          <div class="off-body">
-            <h3>Basketball</h3>
-            <p>The court teaches you everything about teamwork and reading the play. Both translate directly to engineering.</p>
-          </div>
-          <span class="off-tag mono">court vision</span>
-        </div>
-
-        <div class="off-card" data-hobby="gym">
-          <div class="off-card-bg"></div>
-          <div class="off-icon">🏋️</div>
-          <div class="off-body">
-            <h3>Gym</h3>
-            <p>Progressive overload, consistency, form over ego. The same philosophy I bring to writing clean, maintainable code.</p>
-          </div>
-          <span class="off-tag mono">progressive overload</span>
-        </div>
-
-        <!-- <div class="off-card" data-hobby="motorcycle">
-          <div class="off-card-bg"></div>
-          <div class="off-icon">🏍️</div>
-          <div class="off-body">
-            <h3>Motorcycle</h3>
-            <p>Nothing clears the mind like an open road. It's where I debug life and come back with fresh eyes on hard problems.</p>
-          </div>
-          <span class="off-tag mono">open roads</span>
-        </div> -->
-
-        <div class="off-card" data-hobby="hiking">
-          <div class="off-card-bg"></div>
-          <div class="off-icon">🥾</div>
-          <div class="off-body">
-            <h3>Hiking &amp; Nature</h3>
-            <p>Slow down, look further, take one step at a time. Mountains are patient. Great systems are built the same way.</p>
-          </div>
-          <span class="off-tag mono">summit mode</span>
-        </div>
-
-        <div class="off-card" data-hobby="motorcycle">
-          <div class="off-card-bg"></div>
-          <div class="off-icon">👨‍👩‍👧‍👦</div>
-          <div class="off-body">
-            <h3>Family &amp; Travel</h3>
-            <p>Exploring new places with my wife, kids, and crew. Travel rewires how you think — new places, new perspectives, better code. The best adventures are the ones shared.</p>
-          </div>
-          <span class="off-tag mono">highest priority</span>
-        </div>
-
-        <!-- <div class="off-card off-card--wide" data-hobby="family">
-          <div class="off-card-bg"></div>
-          <div class="off-icon">👨‍👩‍👧‍👦</div>
-          <div class="off-body">
-            <h3>Family &amp; Travel</h3>
-            <p>Exploring new places with my wife, kids, and crew. Travel rewires how you think — new places, new perspectives, better code. The best adventures are the ones shared.</p>
-          </div>
-          <span class="off-tag mono">highest priority</span>
-        </div> -->
-
-      </div>
-
-      <!-- Code comment block -->
-      <!-- <div class="code-comment-block mono">
-        <span class="cc-slash">/*</span><br>
-        &nbsp;* What keeps me grounded:<br>
-        &nbsp;* family first, always.<br>
-        &nbsp;* the court on weekends.<br>
-        &nbsp;* iron in the morning.<br>
-        &nbsp;* trails on long weekends.<br>
-        &nbsp;* open roads when i need to think.<br>
-        &nbsp;* then back to the keyboard, recharged.<br>
-        <span class="cc-slash">&nbsp;*/</span>
-      </div> -->
-
-    </div>
-  </section>
+  </main>
 
 
-  <!-- ============================================================ FOOTER ============================================================ -->
+  <!-- ================================ FOOTER ================================ -->
   <footer class="site-footer">
     <div class="footer-inner">
-      <div class="footer-left">
-        <span class="footer-logo"><span class="footer-bracket">&lt;</span>Joseph Bautista<span class="footer-bracket">/&gt;</span></span>
-        <span class="footer-copy mono">Built by Joseph Bautista</span>
-      </div>
-      <div class="footer-socials">
-        <a href="https://github.com/joseph-bautista"           target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://linkedin.com/in/joseph-bautista"      target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://www.josephbautista.com"                target="_blank" title="Website"><i class="fas fa-globe"></i></a>
-        <a href="mailto:josephreuben.bautista@gmail.com"                        title="Email"><i class="fas fa-envelope"></i></a>
-      </div>
+      <p class="footer-copy">© <span id="year">2026</span> Joseph Bautista · Metro Manila, Philippines</p>
+      <p class="footer-note">Hand-built and self-hosted on a home server.</p>
     </div>
   </footer>
 
-  <script src="assets/js/script.js"></script>
+  <script src="/assets/js/script.js" defer></script>
 </body>
 </html>
