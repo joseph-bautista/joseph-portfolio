@@ -38,7 +38,7 @@ jobs:
             git pull origin main
 
             echo "Building containers..."
-            docker compose build
+            docker compose build --no-cache
 
             echo "Restarting application..."
             docker compose up -d
