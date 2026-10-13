@@ -15,7 +15,7 @@
       html.setAttribute('data-theme', next);
       try { localStorage.setItem('portfolio-theme', next); } catch (e) {}
       var meta = document.querySelector('meta[name="theme-color"]');
-      if (meta) meta.setAttribute('content', next === 'dark' ? '#0a0b0a' : '#f7f4ee');
+      if (meta) meta.setAttribute('content', next === 'dark' ? '#0b1220' : '#f8f9fb');
     });
   }
 
