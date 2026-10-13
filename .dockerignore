@@ -1,0 +1,9 @@
+.git
+.github
+.gitignore
+.DS_Store
+.claude
+Dockerfile
+docker-compose.yml
+.dockerignore
+nginx.conf

@@ -2,87 +2,75 @@
    script.js — Joseph Bautista Portfolio
    ================================================================ */
 
-/* ----------------------------------------------------------------
-   1. THEME TOGGLE
-   ---------------------------------------------------------------- */
-const themeToggle = document.getElementById('themeToggle');
-const html        = document.documentElement;
+(function () {
+  'use strict';
 
-const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
-html.setAttribute('data-theme', savedTheme);
+  var html = document.documentElement;
 
-themeToggle.addEventListener('click', () => {
-  const current = html.getAttribute('data-theme');
-  const next    = current === 'dark' ? 'light' : 'dark';
-  html.setAttribute('data-theme', next);
-  localStorage.setItem('portfolio-theme', next);
-});
+  /* 1. THEME TOGGLE (initial theme is set inline in <head>) */
+  var themeToggle = document.getElementById('themeToggle');
+  if (themeToggle) {
+    themeToggle.addEventListener('click', function () {
+      var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      try { localStorage.setItem('portfolio-theme', next); } catch (e) {}
+      var meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.setAttribute('content', next === 'dark' ? '#0a0b0a' : '#f7f4ee');
+    });
+  }
 
+  /* 2. MOBILE MENU */
+  var menuToggle = document.getElementById('menuToggle');
+  var mainNav    = document.getElementById('mainNav');
 
-/* ----------------------------------------------------------------
-   2. ACTIVE NAV LINK
-   ---------------------------------------------------------------- */
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-link');
+  function setMenu(open) {
+    mainNav.classList.toggle('open', open);
+    menuToggle.setAttribute('aria-expanded', String(open));
+    menuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  }
 
-const navObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const id = entry.target.id;
-      navLinks.forEach(link => {
-        link.classList.toggle('active', link.dataset.section === id);
+  if (menuToggle && mainNav) {
+    menuToggle.addEventListener('click', function () {
+      setMenu(!mainNav.classList.contains('open'));
+    });
+    mainNav.addEventListener('click', function (e) {
+      if (e.target.closest('a')) setMenu(false);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') setMenu(false);
+    });
+  }
+
+  /* 3. ACTIVE NAV LINK */
+  var navLinks = document.querySelectorAll('.nav-link');
+  if ('IntersectionObserver' in window) {
+    var navObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach(function (link) {
+          link.classList.toggle('active', link.dataset.section === entry.target.id);
+        });
       });
-    }
-  });
-}, { rootMargin: '-40% 0px -55% 0px' });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    document.querySelectorAll('main section[id]').forEach(function (s) { navObserver.observe(s); });
+  }
 
-sections.forEach(s => navObserver.observe(s));
-
-
-/* ----------------------------------------------------------------
-   3. SCROLL REVEAL
-   ---------------------------------------------------------------- */
-const revealEls = document.querySelectorAll(
-  '.skill-card, .project-card, .timeline-item, .hero-content, .section-heading, .off-card, .edu-card, .code-comment-block, .off-intro'
-);
-
-revealEls.forEach(el => el.classList.add('reveal'));
-
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry, i) => {
-    if (entry.isIntersecting) {
-      setTimeout(() => {
+  /* 4. SCROLL REVEAL */
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
         entry.target.classList.add('visible');
-      }, i * 70);
-      revealObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.1 });
+        revealObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(function (el) { revealObserver.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('visible'); });
+  }
 
-revealEls.forEach(el => revealObserver.observe(el));
-
-
-/* ----------------------------------------------------------------
-   4. SMOOTH ANCHOR SCROLLING
-   ---------------------------------------------------------------- */
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', e => {
-    const target = document.querySelector(anchor.getAttribute('href'));
-    if (!target) return;
-    e.preventDefault();
-    const offset = 70;
-    const top    = target.getBoundingClientRect().top + window.scrollY - offset;
-    window.scrollTo({ top, behavior: 'smooth' });
-  });
-});
-
-
-/* ----------------------------------------------------------------
-   5. HEADER SHADOW ON SCROLL
-   ---------------------------------------------------------------- */
-const header = document.querySelector('.site-header');
-window.addEventListener('scroll', () => {
-  header.style.boxShadow = window.scrollY > 20
-    ? '0 4px 40px rgba(0,0,0,0.4)'
-    : 'none';
-}, { passive: true });
+  /* 5. FOOTER YEAR */
+  var year = document.getElementById('year');
+  if (year) year.textContent = new Date().getFullYear();
+})();
