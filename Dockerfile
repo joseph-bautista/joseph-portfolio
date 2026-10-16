@@ -1,12 +1,16 @@
-FROM nginx:alpine
+# --- Build stage: compile and prerender the site ---
+FROM node:22-alpine AS build
+WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm ci
+COPY . .
+RUN npm run build
 
-# Replace default nginx config
+# --- Serve stage ---
+FROM nginx:alpine
 RUN rm -rf /usr/share/nginx/html/* /etc/nginx/conf.d/default.conf
 COPY nginx.conf /etc/nginx/conf.d/default.conf
-
-# Copy only the public site files (keeps nginx.conf etc. out of the web root)
-COPY index.html robots.txt sitemap.xml /usr/share/nginx/html/
-COPY assets/ /usr/share/nginx/html/assets/
+COPY --from=build /app/dist /usr/share/nginx/html
 
 EXPOSE 80
 
