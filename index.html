@@ -4,8 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Joseph Bautista | Senior Software Engineer: Backend, Cloud &amp; AI</title>
-  <meta name="description" content="Joseph Bautista is a senior software engineer (backend, cloud and AI) with 8+ years building scalable Laravel, Python, PostgreSQL and AWS systems. Available for select freelance engagements: APIs, cloud cost optimization, CI/CD and AI integrations." />
+  <meta name="description" content="Joseph Bautista is a senior software engineer (backend, cloud and AI) with 8+ years building scalable Laravel, Python, PostgreSQL and AWS systems, plus AI agent workflows. Available for select freelance engagements: APIs, cloud optimization and migration, CI/CD and AI integrations." />
   <meta name="author" content="Joseph Bautista" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="theme-color" content="#f8f9fb" />
   <link rel="canonical" href="https://www.josephbautista.com/" />
@@ -30,24 +31,7 @@
   <link rel="apple-touch-icon" href="/assets/images/logo.png" />
 
   <!-- Apply saved / system theme before first paint -->
-  <script>
-    (function () {
-      var root = document.documentElement;
-      try {
-        var saved = localStorage.getItem('portfolio-theme');
-        var dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
-        root.classList.toggle('dark', dark);
-        var m = document.querySelector('meta[name="theme-color"]');
-        if (m) m.setAttribute('content', dark ? '#0b1220' : '#f8f9fb');
-      } catch (e) {}
-      root.classList.add('js');
-    })();
-  </script>
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="/theme-init.js"></script>
 
   <!-- Structured data -->
   <script type="application/ld+json">
@@ -66,8 +50,8 @@
         "knowsLanguage": ["English", "Filipino"],
         "address": { "@type": "PostalAddress", "addressLocality": "Metro Manila", "addressCountry": "PH" },
         "alumniOf": { "@type": "CollegeOrUniversity", "name": "De La Salle – College of Saint Benilde" },
-        "knowsAbout": ["AWS", "Alibaba Cloud", "Laravel", "PHP", "Python", "FastAPI", "Java", "C#", "PostgreSQL", "MySQL", "REST APIs", "CI/CD", "GitHub Actions", "Amazon Bedrock", "Cloud cost optimization", "System architecture"],
-        "sameAs": ["https://github.com/joseph-bautista", "https://linkedin.com/in/joseph-bautista"]
+        "knowsAbout": ["AWS", "Google Cloud", "AI agent workflows", "ReactJS", "Alibaba Cloud", "Laravel", "PHP", "Python", "FastAPI", "Java", "C#", "PostgreSQL", "MySQL", "REST APIs", "CI/CD", "GitHub Actions", "Amazon Bedrock", "Cloud cost optimization", "System architecture"],
+        "sameAs": ["https://github.com/joseph-bautista", "https://www.linkedin.com/in/joseph-bautista/"]
       },
       {
         "@type": "WebSite",
@@ -91,12 +75,7 @@
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GL81SELZNK"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-GL81SELZNK');
-  </script>
+  <script src="/gtag-init.js"></script>
 </head>
 <body>
   <div id="root"><!--app-html--></div>

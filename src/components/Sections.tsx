@@ -4,7 +4,7 @@ import { Card } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
 import { ArrowUpRight, Calendar, Github, Linkedin, Mail, serviceIcons } from '@/components/icons'
 import { Section } from '@/components/Section'
-import { BEYOND, EDUCATION, JOBS, PROCESS, SERVICES, SITE, SKILLS, WORK } from '@/data/content'
+import { BEYOND, EDUCATION, JOBS, PROCESS, SERVICES, SIDE_PROJECT, SITE, SKILLS, WORK } from '@/data/content'
 
 function Tags({ tags, small }: { tags: readonly string[]; small?: boolean }) {
   return (
@@ -121,6 +121,22 @@ export function Experience() {
           </li>
         ))}
       </ol>
+      <div data-reveal className="mt-16">
+        <h3 className="mb-5 text-xl font-semibold tracking-tight">Side project</h3>
+        <div className="grid gap-1.5 border-y py-8 md:grid-cols-[190px_1fr] md:gap-8">
+          <p className="pt-0.5 text-sm font-medium text-muted-foreground">{SIDE_PROJECT.period}</p>
+          <div>
+            <h4 className="text-[1.1rem] font-semibold tracking-tight">{SIDE_PROJECT.title}</h4>
+            <p className="mb-4 mt-0.5 text-[0.92rem] font-medium text-primary">{SIDE_PROJECT.company}</p>
+            <ul className="mb-4 flex max-w-[70ch] flex-col gap-2">
+              {SIDE_PROJECT.bullets.map((b) => (
+                <li key={b} className="relative pl-4 text-[0.95rem] text-muted-foreground before:absolute before:left-0 before:top-[0.7em] before:size-[5px] before:rounded-full before:bg-primary/40">{b}</li>
+              ))}
+            </ul>
+            <Tags tags={SIDE_PROJECT.tags} small />
+          </div>
+        </div>
+      </div>
       <Rows title="Education" rows={EDUCATION} />
       <Rows title="Technical skills" rows={SKILLS} />
     </Section>
@@ -160,7 +176,7 @@ export function Contact() {
     <section id="contact" aria-labelledby="contact-title" className="pb-8 pt-4">
       <div className="mx-auto max-w-[1120px] px-5 sm:px-6">
         <Card data-reveal className="gap-0 rounded-xl border-0 bg-foreground p-8 text-background shadow-none sm:p-16 dark:border dark:bg-card dark:text-foreground">
-          <p className="mb-3 text-[0.78rem] font-semibold uppercase tracking-[0.08em] text-teal-300 dark:text-primary">Contact</p>
+          <p className="mb-3 font-mono text-[0.76rem] font-medium uppercase tracking-[0.12em] text-teal-300 before:mr-2 before:content-['//'] before:opacity-60 dark:text-primary">Contact</p>
           <h2 id="contact-title" className="mb-4 max-w-[20ch] text-[clamp(1.9rem,4vw,3rem)] font-bold leading-[1.12] tracking-[-0.03em]">
             Have a system that needs to <span className="text-teal-300 dark:text-primary">scale</span>?
           </h2>
@@ -193,7 +209,7 @@ export function Footer() {
       <Separator className="hidden" />
       <div className="mx-auto flex max-w-[1120px] flex-wrap justify-between gap-x-8 gap-y-2 text-sm text-muted-foreground">
         <p>© <span suppressHydrationWarning>{new Date().getFullYear()}</span> Joseph Bautista · Metro Manila, Philippines</p>
-        <p>Hand-built and self-hosted on a home server.</p>
+        <p>Hand-built, self-hosted, no cookies of my own.</p>
       </div>
     </footer>
   )

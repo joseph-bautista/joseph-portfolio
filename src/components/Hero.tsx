@@ -4,10 +4,11 @@ import { PROOF, SITE, SNAPSHOT } from '@/data/content'
 
 export function Hero() {
   return (
-    <section id="top" aria-labelledby="hero-title" className="border-b px-5 pb-16 pt-[calc(68px+3rem)] sm:px-6 sm:pt-[calc(68px+5rem)]">
+    <section id="top" aria-labelledby="hero-title" className="relative isolate border-b px-5 pb-16 pt-[calc(68px+3rem)] sm:px-6 sm:pt-[calc(68px+5rem)]">
+      <div className="hero-grid pointer-events-none absolute inset-0 -z-10" aria-hidden="true" />
       <div className="mx-auto grid max-w-[1120px] gap-12 lg:grid-cols-[1.55fr_1fr] lg:gap-16">
         <div>
-          <p className="mb-7 inline-flex items-center gap-2.5 rounded-full bg-card px-3.5 py-1.5 text-[0.82rem] font-medium text-muted-foreground shadow-[0_0_0_1px_var(--border)]">
+          <p className="mb-7 inline-flex items-center gap-2.5 rounded-full bg-card px-3.5 py-1.5 font-mono text-[0.78rem] font-medium text-muted-foreground shadow-[0_0_0_1px_var(--border)]">
             <span className="size-[7px] rounded-full bg-emerald-600" aria-hidden="true" />
             Accepting select freelance engagements
           </p>
@@ -15,9 +16,9 @@ export function Hero() {
             Backend &amp; cloud engineering for products that have to <span className="text-primary">scale</span>.
           </h1>
           <p className="mb-9 max-w-[58ch] text-[1.1rem] leading-[1.7] text-muted-foreground">
-            I'm Joseph Bautista, a senior software engineer across backend, cloud and AI, with 8+ years shipping Laravel, Python,
-            PostgreSQL and AWS systems for startups and growing teams. I design the architecture, automate the delivery, and keep
-            the cloud bill honest.
+            I'm Joseph Bautista, a senior software, AI and cloud engineer with 8+ years building scalable backends and cloud
+            infrastructure in Laravel, Python, PostgreSQL and AWS. I design the architecture, automate the delivery, set up AI agent
+            workflows that help teams build and maintain software, and keep the cloud bill honest.
           </p>
           <div className="flex flex-wrap gap-3">
             <Button asChild size="lg" className="h-11 w-full px-5 text-[0.95rem] sm:w-auto">
@@ -35,7 +36,7 @@ export function Hero() {
           <dl className="divide-y">
             {SNAPSHOT.map((s) => (
               <div key={s.label} className="py-4">
-                <dt className="mb-1 text-xs font-semibold uppercase tracking-wider text-muted-foreground">{s.label}</dt>
+                <dt className="mb-1 font-mono text-[0.7rem] font-medium uppercase tracking-[0.1em] text-muted-foreground">{s.label}</dt>
                 <dd className="text-[0.95rem] leading-snug">
                   {s.href ? (
                     <>
