@@ -3,7 +3,8 @@ export const SITE = {
   email: 'josephreuben.bautista@gmail.com',
   calendly: 'https://calendly.com/joseph-bautista/30min',
   github: 'https://github.com/joseph-bautista',
-  linkedin: 'https://linkedin.com/in/joseph-bautista',
+  linkedin: 'https://www.linkedin.com/in/joseph-bautista/',
+  title: 'Senior Software Engineer | Backend | Cloud | AI',
 }
 
 export const NAV = [
@@ -15,10 +16,10 @@ export const NAV = [
 ]
 
 export const SNAPSHOT: { label: string; value: string; href?: string; linkText?: string; tail?: string }[] = [
-  { label: 'Focus', value: 'Backend systems, cloud architecture, CI/CD, AI' },
-  { label: 'Core stack', value: 'Laravel · Python · PostgreSQL · AWS' },
-  { label: 'Currently', value: 'Senior Software Engineer, Uni-President Information Philippines' },
-  { label: 'Also building', value: '', href: 'https://joinhousemate.com', linkText: 'HouseMate', tail: ', a rental & household platform' },
+  { label: 'Focus', value: 'Backend systems, cloud architecture, CI/CD, AI integrations and agent workflows' },
+  { label: 'Core stack', value: 'Laravel · Python · PostgreSQL · AWS · Google Cloud' },
+  { label: 'Currently', value: 'Senior Software Engineer at Uni-President Information Philippines; Founding Engineer at Valtor Solutions' },
+  { label: 'Also building', value: '', href: 'https://joinhousemate.com', linkText: 'HouseMate', tail: ', a B2B SaaS for rental property owners and managers (founder)' },
   { label: 'Based in', value: 'Metro Manila, PH · working remotely with global teams' },
 ]
 
@@ -38,9 +39,9 @@ export const SERVICES = [
   },
   {
     icon: 'cloud',
-    title: 'AWS architecture & cost optimization',
-    body: 'Reliable, secure infrastructure on AWS, built to the size you actually need. Trimmed monthly spend by 37% on a live production environment.',
-    tags: ['EC2', 'RDS', 'S3', 'CloudFront', 'Route 53', 'IAM', 'Alibaba Cloud'],
+    title: 'Cloud architecture, optimization & migration',
+    body: 'Reliable, secure infrastructure built to the size you actually need. Trimmed monthly AWS spend by 37% on a live production environment, and currently leading an AWS to Google Cloud migration.',
+    tags: ['AWS', 'Google Cloud', 'Alibaba Cloud', 'Managed PostgreSQL', 'IAM'],
   },
   {
     icon: 'repeat',
@@ -50,22 +51,22 @@ export const SERVICES = [
   },
   {
     icon: 'cpu',
-    title: 'AI-powered product features',
-    body: 'Practical LLM features wired into real workflows, such as a BOQ engine built on Claude and Amazon Bedrock for construction procurement.',
-    tags: ['Amazon Bedrock', 'Claude', 'Laravel', 'AWS'],
+    title: 'AI features & agent workflows',
+    body: 'Practical LLM features wired into real workflows, such as a BOQ engine on Claude and Amazon Bedrock, plus AI agent workflows that help teams build and maintain software and automate existing business processes.',
+    tags: ['Claude', 'Amazon Bedrock', 'Cursor', 'Agent workflows', 'Automation'],
   },
 ] as const
 
 export const WORK = [
   {
-    num: '01', type: 'Startup · Marketplace', title: 'HouseMate', href: 'https://joinhousemate.com',
-    body: 'A rental marketplace and household management platform connecting property owners with renters. It began as a school paper at De La Salle – College of Saint Benilde and now centralizes listings, tenant management, rent tracking, maintenance, messaging and shared household expenses. Currently in waitlist.',
-    tags: ['FastAPI', 'React', 'PostgreSQL'], resultLabel: 'Status', result: ['Waitlist open'],
+    num: '01', type: 'Founder · B2B SaaS', title: 'HouseMate', href: 'https://joinhousemate.com',
+    body: 'A B2B SaaS platform for rental property owners and managers, built across four repositories: the platform and an admin CRM, each with its own backend and frontend. Every repository runs its own planner, coder, QA and security agents (plus a designer agent on the frontends) around a shared workspace that keeps decisions and context consistent and work traceable.',
+    tags: ['FastAPI', 'ReactJS', 'PostgreSQL', 'AI agents'], resultLabel: 'Role', result: ['Founder', 'Four-repo platform'],
   },
   {
     num: '02', type: 'Platform · AI & API', title: 'AI-powered procurement platform', href: 'https://valtorsolutions.com/products',
-    body: 'Founding engineer on a construction procurement platform: architected the backend and AWS infrastructure, digitizing sourcing, bidding, quotation and order management, plus an AI BOQ recommendation engine.',
-    tags: ['Laravel', 'PostgreSQL', 'AWS', 'Claude', 'Amazon Bedrock'], resultLabel: 'Role', result: ['Founding engineer'],
+    body: 'Founding engineer on a construction procurement platform: architected the backend and AWS infrastructure, digitized sourcing, bidding, quotation and order management, shipped an AI BOQ recommendation engine, and is now leading the migration of its infrastructure from AWS to Google Cloud.',
+    tags: ['Laravel', 'PostgreSQL', 'AWS', 'Google Cloud', 'Claude', 'Amazon Bedrock'], resultLabel: 'Role', result: ['Founding engineer', 'Leading GCP migration'],
   },
   {
     num: '03', type: 'Infrastructure · DevOps', title: 'AWS cost & CI/CD overhaul', href: 'https://www.matchmecarfinance.co.uk/',
@@ -91,10 +92,12 @@ export const JOBS = [
     period: 'Jun 2026 – Present', title: 'Senior Software Engineer', company: 'Uni-President Information Philippines Corp. · Pasig, Philippines',
     bullets: [
       'Delivered software across three time-critical projects using Python, Java, C# and Alibaba Cloud, helping teams meet critical delivery timelines.',
+      'Built an internal system for the team to track tasks and plan sprints.',
+      'Set up AI agents to help the team develop features and maintain the app.',
       'Completed remaining development tasks and technical documentation for a project successfully delivered on schedule.',
       'Collaborated with cross-functional teams to resolve implementation issues and mentored junior and mid-level developers through technical guidance and code reviews.',
     ],
-    tags: ['Python', 'Java', 'C#', 'Alibaba Cloud'],
+    tags: ['Python', 'Java', 'C#', 'Alibaba Cloud', 'AI agents'],
   },
   {
     period: 'Jun 2025 – Present', title: 'Founding Engineer & Lead Software Developer', company: 'Valtor Solutions, Inc. · Philippines',
@@ -102,12 +105,15 @@ export const JOBS = [
       'Joined as a founding engineer, taking ownership of the technical foundation and building the core construction procurement platform from the ground up.',
       'Architected and developed the platform using Laravel, PostgreSQL and AWS, digitizing sourcing, bidding, quotation and order-management workflows.',
       'Led technical direction across the founding team, defining system architecture, engineering practices and technology strategy.',
+      'Set up automations from existing business processes, and proposed and implemented new features.',
       'Developed an AI-powered BOQ recommendation system using Claude and Amazon Bedrock to accelerate quotation generation and product recommendations.',
+      'Set up AI agents to help the team develop features and maintain the app.',
+      'Leading the migration of the application infrastructure from AWS to Google Cloud, with compute and managed PostgreSQL already set up.',
     ],
-    tags: ['Laravel', 'PostgreSQL', 'AWS', 'Claude', 'Amazon Bedrock'],
+    tags: ['Laravel', 'PostgreSQL', 'AWS', 'Google Cloud', 'Claude', 'Amazon Bedrock'],
   },
   {
-    period: 'Mar 2024 – Apr 2026', title: 'Senior Developer & AWS Cloud Engineer', company: 'Match Me Auto Group · Pasay, Philippines',
+    period: 'Mar 2024 – Apr 2026', title: 'Senior Developer and AWS Cloud Engineer', company: 'Match Me Auto Group · Pasay, Philippines',
     bullets: [
       'Optimized AWS infrastructure and reconfigured key cloud services, improving performance while reducing monthly operating costs by 37%.',
       'Designed and automated GitHub Actions CI/CD pipelines, reducing deployment time by 94% and improving release consistency.',
@@ -140,16 +146,27 @@ export const JOBS = [
   },
 ]
 
+export const SIDE_PROJECT = {
+  period: 'Apr 2026 – Present', title: 'Founder', company: 'HouseMate · Mandaluyong, Philippines',
+  bullets: [
+    'Founded and led a B2B SaaS platform for rental property owners and managers, built on Python (FastAPI), ReactJS and PostgreSQL across four repositories: the platform and the admin CRM, each with its own backend and frontend.',
+    'Set up AI agents to help develop features and maintain the app: every repository has its own planner, coder, QA and security agents, plus a designer agent on the frontends, which work independently on each feature assigned.',
+    'Maintain a shared workspace that stores decisions and context across all four repositories, so agents stay consistent and work is traceable.',
+  ],
+  tags: ['FastAPI', 'ReactJS', 'PostgreSQL', 'AI agents'],
+}
+
 export const EDUCATION = [
   { name: 'BS Information Systems', meta: "De La Salle – College of Saint Benilde · 2026 – Present · One-year bachelor's degree equivalency program" },
   { name: 'Diploma in Information and Communications Technology', meta: 'Rizal Technological University · 2016' },
 ]
 
 export const SKILLS = [
-  { name: 'Languages', meta: 'PHP, JavaScript, Python, Java, C#' },
-  { name: 'Frameworks', meta: 'Laravel, ExpressJS, FastAPI, Springboot, .NET' },
-  { name: 'Tools & platforms', meta: 'MySQL, PostgreSQL, Postman, Docker, AWS, Alibaba Cloud, GitHub Actions, Claude' },
-  { name: 'Spoken languages', meta: 'English (professional), Filipino (native)' },
+  { name: 'Programming languages', meta: 'PHP, JavaScript, Python, Java, C#' },
+  { name: 'Frameworks', meta: 'Laravel, ExpressJS, ReactJS, FastAPI, Spring Boot, .NET' },
+  { name: 'Cloud & tools', meta: 'MySQL, PostgreSQL, Postman, Docker, AWS, Google Cloud, Alibaba Cloud, GitHub Actions' },
+  { name: 'AI', meta: 'Claude, Amazon Bedrock, Cursor, AI agent workflows for development and maintenance' },
+  { name: 'Languages', meta: 'English (professional), Filipino (native)' },
 ]
 
 export const BEYOND = [

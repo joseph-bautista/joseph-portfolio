@@ -1,8 +1,18 @@
 services:
   web:
-    build: .
+    # IMAGE and IMAGE_TAG are exported by the deploy workflow.
+    image: ${IMAGE:?IMAGE is not set}:${IMAGE_TAG:?IMAGE_TAG is not set}
 
     ports:
-      - "8080:80"
+      - "3000:8080"
+
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop: [ALL]
+    security_opt:
+      - no-new-privileges:true
+    pids_limit: 100
+    mem_limit: 128m
 
     restart: unless-stopped

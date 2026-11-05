@@ -1,48 +1,113 @@
-name: Deploy
+name: Deploy To Production
 
+# ci -> build-image -> deploy-to-production. The image is built once on the
+# runner, pushed to GHCR, and the server only pulls and restarts it: nothing is
+# built or checked out on the server.
 on:
   push:
     branches:
       - main
 
+permissions: {}
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
 jobs:
-  deploy:
+  ci:
+    permissions:
+      contents: read
+    uses: ./.github/workflows/ci.yml
+
+  build-image:
+    needs: ci
+    if: github.ref == 'refs/heads/main'
+    environment: production
     runs-on: ubuntu-latest
-
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      packages: write
+    outputs:
+      image: ${{ steps.meta.outputs.image }}
+      tag: ${{ steps.meta.outputs.tag }}
     steps:
-      - name: Install cloudflared
-        run: |
-          wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb
-          sudo dpkg -i cloudflared-linux-amd64.deb
+      - name: Checkout code
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
 
-      - name: Setup SSH Key
+      # GHCR image names must be lowercase; the org name is not.
+      - name: Compute image name and tag
+        id: meta
         run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SERVER_SSH_KEY }}" > ${{ secrets.SSH_FILENAME }}
-          chmod 600 ${{ secrets.SSH_FILENAME }}
+          echo "image=ghcr.io/${GITHUB_REPOSITORY,,}" >> "$GITHUB_OUTPUT"
+          echo "tag=main-${GITHUB_SHA::12}" >> "$GITHUB_OUTPUT"
 
-      - name: Configure SSH
-        run: |
-          cat > ~/.ssh/config <<EOF
-          ${{ secrets.SSH_CONFIGURE }}
-          EOF
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@8d2750c68a42422c14e847fe6c8ac0403b4cbd6f # v3
 
-      - name: Deploy
-        run: |
-          ssh myserver << 'EOF'
-            sudo su
+      - name: Log in to GHCR
+        uses: docker/login-action@c94ce9fb468520275223c153574b00df6fe4bcc9 # v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Build and push image
+        uses: docker/build-push-action@10e90e3645eae34f1e60eeb005ba3a3d33f178e8 # v6
+        with:
+          context: .
+          push: true
+          tags: |
+            ${{ steps.meta.outputs.image }}:${{ steps.meta.outputs.tag }}
+            ${{ steps.meta.outputs.image }}:main
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  deploy-to-production:
+    needs: build-image
+    environment: production
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      packages: read
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+
+      - name: Copy compose file to the server
+        uses: appleboy/scp-action@ff85246acaad7bdce478db94a363cd2bf7c90345 # v1.0.0
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.PRIVATE_KEY }}
+          source: docker-compose.yml
+          # Staged in the deploy user's home; the deploy script installs it as root.
+          overwrite: true
+          target: deploy-staging
+
+      - name: Pull the image and deploy
+        uses: appleboy/ssh-action@2ead5e36573f08b82fbfce1504f1a4b05a647c6f # v1.2.2
+        env:
+          IMAGE: ${{ needs.build-image.outputs.image }}
+          IMAGE_TAG: ${{ needs.build-image.outputs.tag }}
+          GHCR_USER: ${{ github.actor }}
+          GHCR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.PRIVATE_KEY }}
+          command_timeout: 15m
+          envs: IMAGE,IMAGE_TAG,GHCR_USER,GHCR_TOKEN
+          script: |
+            set -e
+            trap 'sudo docker logout ghcr.io >/dev/null 2>&1 || true' EXIT
             cd ${{ secrets.TARGET_DIR }}
-
-            echo "Pulling latest code..."
-            git pull origin main
-
-            echo "Building containers..."
-            docker compose build --no-cache
-
-            echo "Restarting application..."
-            docker compose up -d
-
-            echo "Cleaning images..."
-            docker image prune -f
-          EOF
+            sudo install -o root -g root -m 0644 "$HOME/deploy-staging/docker-compose.yml" docker-compose.yml
+            rm -f "$HOME/deploy-staging/docker-compose.yml"
+            echo "$GHCR_TOKEN" | sudo docker login ghcr.io -u "$GHCR_USER" --password-stdin
+            export IMAGE IMAGE_TAG
+            sudo IMAGE="$IMAGE" IMAGE_TAG="$IMAGE_TAG" docker compose pull
+            sudo IMAGE="$IMAGE" IMAGE_TAG="$IMAGE_TAG" docker compose up -d --remove-orphans
+            sudo docker image prune -f
